@@ -1,8 +1,10 @@
 package pro.sky.skyprospringhomework;
 
 
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/calculator")
@@ -15,7 +17,7 @@ public class CalculatorController {
     }
 
     @GetMapping
-    public String welcome() {
+    public String greeting() {
         return calculatorServiceImpl.welcome();
     }
 
@@ -62,9 +64,8 @@ public class CalculatorController {
             return "Ошибка! Введите первое число.";
         } else if (num2 == null) {
             return "Ошибка! Введите второе число.";
-        } else if (num2 == 0) {
-            return "Ошибка! На 0 делить нельзя!";
-        } else {
+        }
+         else {
             return num1 + " / " + num2 + " = " + calculatorServiceImpl.division(num1, num2);
         }
     }
