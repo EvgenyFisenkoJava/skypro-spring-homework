@@ -25,28 +25,28 @@ class CalculatorServiceImplParamTest {
 
     @ParameterizedTest
     @MethodSource("paramsForTest")
-    void addition(int num1, int num2) {
+    void testAdd (int num1, int num2) {
         int result = calculatorService.addition(num1, num2);
         assertEquals(5, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsForTest")
-    void subtraction(int num1, int num2) {
+    void testMinus (int num1, int num2) {
         int result = calculatorService.subtraction(num1, num2);
         assertEquals(1, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsForTest")
-    void division(int num1, int num2) {
+    void testDivide(int num1, int num2) {
         double result = calculatorService.division(num1, num2);
         assertEquals(1.5, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsForTest")
-    void multiply(int num1, int num2) {
+    void testMultiply(int num1, int num2) {
         int result = calculatorService.multiplication(num1, num2);
         assertEquals(6, result);
     }
